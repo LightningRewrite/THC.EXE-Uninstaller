@@ -1,0 +1,11 @@
+THC.EXE Uninstaller — Windows EXE icon check
+
+1. Run Build_Windows_EXE.bat.
+2. Compare dist\THC.EXE Uninstaller.exe against dist\THC.EXE Uninstaller - Icon Check.exe.
+   The latter uses a fresh name, which helps distinguish a Windows Explorer icon-cache issue.
+3. If the freshly named EXE shows the right icon, the embed is working and Explorer is likely showing a cached version of the original.
+4. Try restarting Windows Explorer or signing out and back in. Windows may take a little time to refresh the icon cache.
+5. If neither filename shows the correct icon, send the build output and the newly compiled EXE for investigation.
+
+The compile command embeds thc_exe_uninstaller.ico with PyInstaller's --icon option.
+Including the ICO as application data is separate and allows the Tkinter windows to display it.
